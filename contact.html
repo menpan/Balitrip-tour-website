@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontak - BaliTrip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><!-- Navigation --></header>
+  <main>
+    <h2>Booking Form</h2>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Nama" required>
+      <input type="text" id="tour" placeholder="Nama Paket Tour" required>
+      <input type="date" id="date" required>
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+    <h2>Lokasi Kami</h2>
+    <div style="width: 100%">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18..."></iframe>
+    </div>
+  </main>
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const tour = document.getElementById('tour').value;
+      const date = document.getElementById('date').value;
+      const message = `Halo saya ${name}, ingin booking ${tour} pada tanggal ${date}`;
+      window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(message)}`);
+    });
+  </script>
+</body>
+</html>
